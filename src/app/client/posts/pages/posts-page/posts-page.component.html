@@ -1,0 +1,8 @@
+<h2>
+  Posts list
+</h2>
+<button (click)="onKek(5)">kek 5</button><button (click)="onKek(2)">kek 2</button>
+<div>
+  <app-posts-list [posts]="posts$ | async"></app-posts-list>
+
+</div>
