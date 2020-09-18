@@ -1,5 +1,13 @@
 :root {
-  --background-color: #303030;
+  --background-color: #eef0f1;
+  --text-color: #08090a;
+  --card-color: #08090a;
 
   --white-color: #fff;
+  --primary-color: #c2185b;
+
+  --default-transition: all 0.2s ease-in-out;
+
+  --app-border: 2px solid var(--card-color);
+  --app-shadow: 4px 4px 0 var(--card-color);
 }

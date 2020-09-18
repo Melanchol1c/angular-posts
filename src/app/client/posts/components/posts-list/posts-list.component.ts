@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from '@/app/core/models';
+import { RenderPost } from '../../types';
 
 @Component({
   selector: 'app-posts-list',
@@ -15,7 +15,7 @@ export class PostsListComponent implements OnInit {
    *
    */
   @Input()
-  public posts;
+  public posts: RenderPost[];
 
   /**
    *

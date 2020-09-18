@@ -1,3 +1,5 @@
 <mat-card class="post" *ngFor="let post of posts">
-  <mat-card-title>{{ post.title }}</mat-card-title>
+  <a [routerLink]="['/posts', post.id]">
+    <mat-card-title>{{ post.title }}</mat-card-title>
+  </a>
 </mat-card>

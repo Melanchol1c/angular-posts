@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
-import { Post, User } from '@/app/core/models';
+import { map } from 'rxjs/operators';
 import { PostsService } from '@/app/core/services/posts.service';
 import { UserService } from '@/app/core/services/user.service';
-
-type RenderPost = Post & Partial<User>;
+import { RenderPost } from '../../types';
 
 @Component({
   selector: 'app-posts-page',
