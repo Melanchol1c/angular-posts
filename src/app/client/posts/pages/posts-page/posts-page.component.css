@@ -1,5 +1,9 @@
-div {
+.host {
   display: flex;
-  align-items: center;
-  justify-self: start;
+  justify-content: center;
+}
+
+.posts {
+  padding: 20px;
+  width: 600px;
 }

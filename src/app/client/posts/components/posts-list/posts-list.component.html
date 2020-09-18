@@ -1,5 +1,3 @@
-<ul>
-  <li *ngFor="let post of posts">
-    {{post.title}}
-  </li>
-</ul>
+<mat-card class="post" *ngFor="let post of posts">
+  <mat-card-title>{{ post.title }}</mat-card-title>
+</mat-card>

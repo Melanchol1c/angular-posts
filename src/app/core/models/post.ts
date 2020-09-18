@@ -1,19 +1,13 @@
-/**
- *
- */
-export class Post {
-
-  /**
-   *
-   */
+export default class Post {
+  public id: number;
   public userId: number;
   public title: string;
+  public body: string;
 
-  /**
-   * @param data Data.
-   */
   public constructor(data: Partial<Post>) {
+    this.id = data.id;
     this.userId = data.userId;
     this.title = data.title;
+    this.body = data.body;
   }
 }

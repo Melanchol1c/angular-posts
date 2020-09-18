@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Post } from 'src/app/core/models/post';
+import { Post } from '@/app/core/models';
 
 @Component({
   selector: 'app-posts-list',
@@ -12,7 +11,6 @@ import { Post } from 'src/app/core/models/post';
  *
  */
 export class PostsListComponent implements OnInit {
-
   /**
    *
    */
@@ -22,11 +20,10 @@ export class PostsListComponent implements OnInit {
   /**
    *
    */
-  public constructor() { }
+  public constructor() {}
 
   /**
    *
    */
-  public ngOnInit(): void {
-  }
+  public ngOnInit(): void {}
 }

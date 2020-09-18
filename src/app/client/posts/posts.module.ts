@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { SharedModule } from '@/app/shared/shared.module';
+import { PostDetailsPageComponent } from './pages/post-details-page/post-details-page.component';
 
 const routes: Routes = [
   {
@@ -12,17 +14,19 @@ const routes: Routes = [
     pathMatch: 'full',
     component: PostsPageComponent,
   },
+  {
+    path: ':id',
+    pathMatch: 'full',
+    component: PostsPageComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [PostsPageComponent, PostsListComponent],
-  imports: [
-    RouterModule.forChild(routes),
-    CommonModule,
+  declarations: [
+    PostsPageComponent,
+    PostsListComponent,
+    PostDetailsPageComponent,
   ],
+  imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
 })
-
-/**
- * Posts module.
- */
-export class PostsModule { }
+export class PostsModule {}
