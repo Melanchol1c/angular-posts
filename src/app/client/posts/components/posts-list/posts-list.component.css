@@ -2,3 +2,8 @@
   width: 100%;
   margin-bottom: 20px !important;
 }
+
+.post:hover {
+  box-shadow: var(--app-hover-shadow) !important;
+  border-color: var(--primary-color);
+}

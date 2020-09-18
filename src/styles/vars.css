@@ -10,4 +10,5 @@
 
   --app-border: 2px solid var(--card-color);
   --app-shadow: 4px 4px 0 var(--card-color);
+  --app-hover-shadow: 4px 4px 0 var(--primary-color);
 }
