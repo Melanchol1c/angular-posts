@@ -1,0 +1,16 @@
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+p {
+  font-size: 14px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-top: 16px;
+}

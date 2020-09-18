@@ -1,0 +1,19 @@
+<section class="card">
+  <h3>Comments</h3>
+
+  <ul>
+    <li *ngFor="let comment of comments">
+      <app-entity-info
+        [avatarSize]="24"
+        [avatar]="comment.authorAvatar"
+        [name]="comment.email"
+      ></app-entity-info>
+
+      <p>{{ comment.body }}</p>
+    </li>
+  </ul>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Leave a comment" />
+  </mat-form-field>
+</section>

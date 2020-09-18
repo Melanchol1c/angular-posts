@@ -1,4 +1,5 @@
-import { Post, User } from '@/app/core/models';
+import { Comment, Post, User } from '@/app/core/models';
+import { CommentsService } from '@/app/core/services/comments.service';
 import { PostsService } from '@/app/core/services/posts.service';
 import { UserService } from '@/app/core/services/user.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -13,11 +14,13 @@ import { Observable, Subscription } from 'rxjs';
 export class PostDetailsPageComponent implements OnInit, OnDestroy {
   public post: Post;
   public author$: Observable<User>;
+  public comments$: Observable<Comment[]>;
   private postSubscription: Subscription;
 
   constructor(
     protected readonly postsService: PostsService,
     protected readonly usersService: UserService,
+    protected readonly commentsService: CommentsService,
     private route: ActivatedRoute
   ) {}
 
@@ -29,6 +32,7 @@ export class PostDetailsPageComponent implements OnInit, OnDestroy {
       if (data !== undefined) {
         this.post = data;
         this.author$ = this.usersService.getById(data.userId);
+        this.comments$ = this.commentsService.getByPostId(data.id);
       }
     });
   }

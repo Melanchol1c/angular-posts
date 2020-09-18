@@ -7,6 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EntityInfoComponent implements OnInit {
   @Input()
+  public avatarSize: string;
+
+  @Input()
   public avatar: string;
 
   @Input()

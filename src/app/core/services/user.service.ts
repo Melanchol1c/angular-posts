@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { AddressDto, CompanyDto, GeoDto, UserDto } from '@/app/core/dto';
 import { Address, Company, Geo, User } from '@/app/core/models';
 import { environment } from '@/environment/environment';
+import { DataGeneratorService } from './data-generator.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,10 @@ import { environment } from '@/environment/environment';
 export class UserService {
   private readonly USERS_URL = `${environment.apiUrl}/users`;
 
-  constructor(protected readonly http: HttpClient) {}
+  constructor(
+    protected readonly http: HttpClient,
+    protected readonly generator: DataGeneratorService
+  ) {}
 
   public getAll(): Observable<User[]> {
     return this.http
@@ -40,8 +44,8 @@ export class UserService {
       phone: dto.phone,
       website: dto.website,
       company,
-      avatar: this.getRandomAvatar(),
-      primaryColor: this.getRandomColor(),
+      avatar: this.generator.getRandomAvatar(),
+      primaryColor: this.generator.getRandomColor(),
     });
   };
 
@@ -70,20 +74,5 @@ export class UserService {
       catchPhrase: dto.catchPhrase,
       bs: dto.bs,
     });
-  };
-
-  private getRandomAvatar = () => {
-    return `https://api.adorable.io/avatars/${Math.floor(
-      Math.random() * Math.floor(1000)
-    )}`;
-  };
-
-  private getRandomColor = () => {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
   };
 }

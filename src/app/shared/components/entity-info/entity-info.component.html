@@ -1,5 +1,5 @@
 <div class="host">
-  <app-avatar [size]="40" [src]="avatar"></app-avatar>
+  <app-avatar [size]="avatarSize || 40" [src]="avatar"></app-avatar>
   <div class="info">
     <h4 class="name">{{ name }}</h4>
     <p *ngIf="subtitle" class="subtitle">{{ subtitle }}</p>
