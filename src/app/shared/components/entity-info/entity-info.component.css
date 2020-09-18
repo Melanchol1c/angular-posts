@@ -1,0 +1,21 @@
+.host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  padding-top: -4px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.info {
+  margin-top: 6px;
+}

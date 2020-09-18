@@ -1,0 +1,16 @@
+.host {
+  padding: 32px 64px;
+  background-color: var(--white-color);
+  margin-bottom: 50px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.text p {
+  font-size: 20px;
+  line-height: 30px;
+  text-rendering: optimizeSpeed;
+}

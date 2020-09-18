@@ -1,0 +1,4 @@
+.host {
+  display: grid;
+  grid-template-columns: 60px 900px 350px;
+}

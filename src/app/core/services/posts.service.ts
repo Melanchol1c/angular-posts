@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 import { environment } from '@/environment/environment';
 import { Post } from '@/app/core/models';
@@ -19,6 +19,12 @@ export class PostsService {
     return this.http
       .get<PostDto[]>(this.POSTS_URL, { params: options })
       .pipe(map((dtos) => dtos.map(this.mapPostDtoToPost)));
+  }
+
+  public getById(postId: number): Observable<Post> {
+    return this.http
+      .get<PostDto>(`${this.POSTS_URL}/${postId}`)
+      .pipe(map(this.mapPostDtoToPost));
   }
 
   private mapPostDtoToPost(dto: PostDto): Post {

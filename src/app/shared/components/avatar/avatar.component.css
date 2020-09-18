@@ -1,0 +1,5 @@
+.host {
+  border-radius: 50%;
+  box-shadow: var(--app-circle-shadow);
+  border: var(--app-border);
+}

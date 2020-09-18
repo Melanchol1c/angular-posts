@@ -7,6 +7,7 @@ import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { SharedModule } from '@/app/shared/shared.module';
 import { PostDetailsPageComponent } from './pages/post-details-page/post-details-page.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
     component: PostsPageComponent,
   },
   {
-    path: ':id',
+    path: ':postId',
     pathMatch: 'full',
     component: PostDetailsPageComponent,
   },
@@ -26,6 +27,7 @@ const routes: Routes = [
     PostsPageComponent,
     PostsListComponent,
     PostDetailsPageComponent,
+    PostDetailsComponent,
   ],
   imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
 })
