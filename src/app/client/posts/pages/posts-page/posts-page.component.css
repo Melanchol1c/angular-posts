@@ -1,8 +1,3 @@
-.host {
-  display: flex;
-  justify-content: center;
-}
-
 .posts {
   padding: 20px;
   width: 600px;
