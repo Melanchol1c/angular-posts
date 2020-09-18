@@ -39,4 +39,5 @@ a:hover {
 .card {
   border: var(--app-border);
   box-shadow: var(--app-shadow) !important;
+  border-radius: 5px;
 }

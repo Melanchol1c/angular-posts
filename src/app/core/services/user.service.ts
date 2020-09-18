@@ -21,6 +21,12 @@ export class UserService {
       .pipe(map((dtos) => dtos.map(this.mapDtoToUser)));
   }
 
+  public getById(userId): Observable<User> {
+    return this.http
+      .get<UserDto>(`${this.USERS_URL}/${userId}`)
+      .pipe(map(this.mapDtoToUser));
+  }
+
   private mapDtoToUser = (dto: UserDto): User => {
     const address: Address = this.mapDtoToAddress(dto.address);
     const company: Company = this.mapDtoToCompany(dto.company);

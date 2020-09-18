@@ -3,9 +3,10 @@
     <h1>{{ post.title }}</h1>
 
     <app-entity-info
-      name="Kek. asdasdasd"
-      subtitle="asdasdasd as das dsa ad sa"
-      avatar="https://res.cloudinary.com/practicaldev/image/fetch/s--IYJYI3N_--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/222339/3b6b204e-a776-4f5a-88a4-5690dba5cb58.PNG"
+      *ngIf="author"
+      [name]="author.name"
+      [subtitle]="author.username"
+      [avatar]="author.avatar"
     >
     </app-entity-info>
 

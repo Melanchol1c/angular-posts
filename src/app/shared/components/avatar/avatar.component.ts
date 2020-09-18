@@ -12,9 +12,7 @@ export class AvatarComponent implements OnInit {
   @Input()
   public size: number;
 
-  constructor() {
-    console.log(this.src);
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }

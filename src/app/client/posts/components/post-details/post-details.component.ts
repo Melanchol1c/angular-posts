@@ -1,4 +1,4 @@
-import { Post } from '@/app/core/models';
+import { Post, User } from '@/app/core/models';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,6 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PostDetailsComponent implements OnInit {
   @Input()
   public post: Post;
+
+  @Input()
+  public author: User;
 
   constructor() {}
 
