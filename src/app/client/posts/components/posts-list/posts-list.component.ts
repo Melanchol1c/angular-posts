@@ -15,7 +15,7 @@ export class PostsListComponent implements OnInit {
    *
    */
   @Input()
-  public posts: Post[];
+  public posts;
 
   /**
    *

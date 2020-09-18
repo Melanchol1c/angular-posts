@@ -21,7 +21,7 @@ export class UserService {
       .pipe(map((dtos) => dtos.map(this.mapDtoToUser)));
   }
 
-  private mapDtoToUser(dto: UserDto): User {
+  private mapDtoToUser = (dto: UserDto): User => {
     const address: Address = this.mapDtoToAddress(dto.address);
     const company: Company = this.mapDtoToCompany(dto.company);
 
@@ -35,9 +35,9 @@ export class UserService {
       website: dto.website,
       company,
     });
-  }
+  };
 
-  private mapDtoToAddress(dto: AddressDto): Address {
+  private mapDtoToAddress = (dto: AddressDto): Address => {
     const geo: Geo = this.mapDtoToGeo(dto.geo);
 
     return new Address({
@@ -47,20 +47,20 @@ export class UserService {
       zipcode: dto.zipcode,
       geo,
     });
-  }
+  };
 
-  private mapDtoToGeo(dto: GeoDto): Geo {
+  private mapDtoToGeo = (dto: GeoDto): Geo => {
     return new Geo({
       lat: dto.lat,
       lng: dto.lng,
     });
-  }
+  };
 
-  private mapDtoToCompany(dto: CompanyDto): Company {
+  private mapDtoToCompany = (dto: CompanyDto): Company => {
     return new Company({
       name: dto.name,
       catchPhrase: dto.catchPhrase,
       bs: dto.bs,
     });
-  }
+  };
 }
