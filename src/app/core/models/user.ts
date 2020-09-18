@@ -10,12 +10,7 @@ export default class User {
   public phone: string;
   public website: string;
   public company: Company;
-
-  get avatar() {
-    return `https://api.adorable.io/avatars/${Math.floor(
-      Math.random() * Math.floor(1000)
-    )}`;
-  }
+  public avatar: string;
 
   public constructor(data: Partial<User>) {
     this.id = data.id;
@@ -26,5 +21,6 @@ export default class User {
     this.phone = data.phone;
     this.website = data.website;
     this.company = data.company;
+    this.avatar = data.avatar;
   }
 }

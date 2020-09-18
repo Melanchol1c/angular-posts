@@ -34,6 +34,7 @@ export class UserService {
       phone: dto.phone,
       website: dto.website,
       company,
+      avatar: this.getRandomAvatar(),
     });
   };
 
@@ -62,5 +63,11 @@ export class UserService {
       catchPhrase: dto.catchPhrase,
       bs: dto.bs,
     });
+  };
+
+  private getRandomAvatar = () => {
+    return `https://api.adorable.io/avatars/${Math.floor(
+      Math.random() * Math.floor(1000)
+    )}`;
   };
 }

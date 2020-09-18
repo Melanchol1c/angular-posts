@@ -21,6 +21,7 @@ mat-card-title {
 }
 
 a {
+  color: var(--text-color);
   text-decoration: none;
 }
 

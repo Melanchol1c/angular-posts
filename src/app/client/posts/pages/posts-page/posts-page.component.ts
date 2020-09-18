@@ -28,15 +28,13 @@ export class PostsPageComponent {
     const joinStream = combineLatest([postsStream, usersStream]);
 
     return joinStream.pipe(
-      map((data) => {
-        const [posts, users] = data;
-
-        return posts.map((post) => ({
+      map(([posts, users]) => [shuffle(posts), users]),
+      map(([posts, users]) =>
+        posts.map((post) => ({
           ...post,
           user: users.find((user) => user.id === post.userId),
-        }));
-      }),
-      map(shuffle)
+        }))
+      )
     );
   }
 }
