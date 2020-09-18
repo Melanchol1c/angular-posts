@@ -10,7 +10,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Paytone One", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-family: "Paytone One", "Helvetica Neue", sans-serif !important;
 }
 
 mat-card-title {
@@ -26,4 +27,9 @@ a {
 a:hover {
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
+}
+
+.card {
+  border: var(--app-border);
+  box-shadow: var(--app-shadow) !important;
 }

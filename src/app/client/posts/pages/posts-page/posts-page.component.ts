@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
+import { shuffle } from 'lodash';
 import { map } from 'rxjs/operators';
+
 import { PostsService } from '@/app/core/services/posts.service';
 import { UserService } from '@/app/core/services/user.service';
 import { RenderPost } from '../../types';
@@ -33,7 +35,8 @@ export class PostsPageComponent {
           ...post,
           user: users.find((user) => user.id === post.userId),
         }));
-      })
+      }),
+      map(shuffle)
     );
   }
 }

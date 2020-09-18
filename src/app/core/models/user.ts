@@ -11,6 +11,12 @@ export default class User {
   public website: string;
   public company: Company;
 
+  get avatar() {
+    return `https://api.adorable.io/avatars/${Math.floor(
+      Math.random() * Math.floor(1000)
+    )}`;
+  }
+
   public constructor(data: Partial<User>) {
     this.id = data.id;
     this.name = data.name;

@@ -1,4 +1,9 @@
-<mat-card class="post" *ngFor="let post of posts">
+<mat-card class="post card" *ngFor="let post of posts">
+  <mat-card-header>
+    <img [src]="post.user.avatar" mat-card-avatar [alt]="post.user.name" />
+    <mat-card-title>{{ post.user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ post.user.username }}</mat-card-subtitle>
+  </mat-card-header>
   <a [routerLink]="['/posts', post.id]">
     <mat-card-title>{{ post.title }}</mat-card-title>
   </a>
