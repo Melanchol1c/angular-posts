@@ -1,0 +1,19 @@
+<section [style.borderColor]="author && author.primaryColor" class="host card">
+  <app-entity-info
+    class="author"
+    *ngIf="author"
+    [name]="author.name"
+    [avatar]="author.avatar"
+  >
+  </app-entity-info>
+
+  <button mat-flat-button color="accent">FOLLOW</button>
+
+  <dl *ngIf="author">
+    <dt>Company</dt>
+    <dd>{{ author.company.name }}</dd>
+
+    <dt>Website</dt>
+    <dd>{{ author.website }}</dd>
+  </dl>
+</section>

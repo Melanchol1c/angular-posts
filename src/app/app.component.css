@@ -1,11 +1,14 @@
 h1 {
   text-align: center;
+  font-size: 45px !important;
 }
 
 .toolbar {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 70px !important;
+  box-shadow: var(--app-circle-shadow);
 }
 
 .layout {

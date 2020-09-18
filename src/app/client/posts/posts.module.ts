@@ -8,6 +8,7 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
 import { SharedModule } from '@/app/shared/shared.module';
 import { PostDetailsPageComponent } from './pages/post-details-page/post-details-page.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { AuthorInfoComponent } from './components/author-info/author-info.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     PostsListComponent,
     PostDetailsPageComponent,
     PostDetailsComponent,
+    AuthorInfoComponent,
   ],
   imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
 })

@@ -1,0 +1,29 @@
+.host {
+  position: relative;
+  padding: 46px 16px 16px 16px;
+  border-top-width: 32px;
+  margin-bottom: 32px;
+  min-height: 100px;
+}
+
+.author {
+  position: absolute;
+  top: -15px;
+}
+
+button {
+  width: 100%;
+}
+
+dt {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.6;
+  margin-bottom: 5px;
+}
+
+dd {
+  margin: 0 0 15px;
+  font-size: 16px;
+}

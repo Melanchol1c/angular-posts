@@ -3,6 +3,7 @@
     <h1>{{ post.title }}</h1>
 
     <app-entity-info
+      class="author"
       *ngIf="author"
       [name]="author.name"
       [subtitle]="author.username"

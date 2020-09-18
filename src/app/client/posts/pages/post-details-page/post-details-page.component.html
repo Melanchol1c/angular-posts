@@ -1,5 +1,9 @@
 <section class="host">
   <section>react block</section>
   <app-post-details [author]="author$ | async" [post]="post"></app-post-details>
-  <section>user info block + comments block</section>
+  <section class="">
+    <app-author-info [author]="author$ | async"></app-author-info>
+
+    <section class="card"></section>
+  </section>
 </section>

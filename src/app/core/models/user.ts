@@ -11,6 +11,7 @@ export default class User {
   public website: string;
   public company: Company;
   public avatar: string;
+  public primaryColor: string;
 
   public constructor(data: Partial<User>) {
     this.id = data.id;
@@ -22,5 +23,6 @@ export default class User {
     this.website = data.website;
     this.company = data.company;
     this.avatar = data.avatar;
+    this.primaryColor = data.primaryColor;
   }
 }

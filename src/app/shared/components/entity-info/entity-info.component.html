@@ -2,6 +2,6 @@
   <app-avatar [size]="40" [src]="avatar"></app-avatar>
   <div class="info">
     <h4 class="name">{{ name }}</h4>
-    <p class="subtitle">{{ subtitle }}</p>
+    <p *ngIf="subtitle" class="subtitle">{{ subtitle }}</p>
   </div>
 </div>
