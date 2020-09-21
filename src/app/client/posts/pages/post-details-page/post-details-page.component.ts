@@ -2,20 +2,20 @@ import { Comment, Post, User } from '@/app/core/models';
 import { CommentsService } from '@/app/core/services/comments.service';
 import { PostsService } from '@/app/core/services/posts.service';
 import { UserService } from '@/app/core/services/user.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
+import { shareReplay, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-post-details-page',
   templateUrl: './post-details-page.component.html',
   styleUrls: ['./post-details-page.component.css'],
 })
-export class PostDetailsPageComponent implements OnInit, OnDestroy {
-  public post: Post;
+export class PostDetailsPageComponent implements OnInit {
   public author$: Observable<User>;
   public comments$: Observable<Comment[]>;
-  private postSubscription: Subscription;
+  public post$: Observable<Post>;
 
   constructor(
     protected readonly postsService: PostsService,
@@ -26,18 +26,18 @@ export class PostDetailsPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const postId = this.route.snapshot.params.postId;
-    const postStream = this.postsService.getById(postId);
 
-    this.postSubscription = postStream.subscribe((data) => {
-      if (data !== undefined) {
-        this.post = data;
-        this.author$ = this.usersService.getById(data.userId);
-        this.comments$ = this.commentsService.getByPostId(data.id);
-      }
-    });
-  }
+    this.post$ = this.postsService
+      .getById(postId)
+      .pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
-  ngOnDestroy(): void {
-    this.postSubscription.unsubscribe();
+    this.author$ = this.post$.pipe(
+      switchMap((post) => this.usersService.getById(post.userId)),
+      shareReplay({ bufferSize: 1, refCount: true })
+    );
+
+    this.comments$ = this.post$.pipe(
+      switchMap((post) => this.commentsService.getByPostId(post.id))
+    );
   }
 }
